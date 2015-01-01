@@ -2,7 +2,7 @@ module OmniAuth
   module Backstage
     class Client
       def self.client_options(options)
-        ok = %w{site authorize_url token_url}.all? {|param| options.include?(param) }
+        ok = %w{site authorize_url token_url}.all? {|param| options.include?(param.to_sym) }
         raise ArgumentError, 'Missing required parameters.' unless ok
 
         {

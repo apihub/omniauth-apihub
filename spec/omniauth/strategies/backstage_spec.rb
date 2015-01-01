@@ -49,26 +49,26 @@ describe OmniAuth::Strategies::Backstage do
     end
   end
 
-  context 'info' do
+  context "info" do
     before(:each) do
       backstage.stub(:raw_info).and_return({})
     end
 
-    it 'has name key' do
+    it "has name key" do
       expect(backstage.info).to have_key(:name)
     end
 
-    it 'has email key' do
+    it "has email key" do
       expect(backstage.info).to have_key(:email)
     end
 
-    it 'has username key' do
+    it "has username key" do
       expect(backstage.info).to have_key(:username)
     end
   end
 
-  context 'extra' do
-    it 'returns raw user info' do
+  context "extra" do
+    it "returns raw user info" do
       backstage.stub(:raw_info).and_return({ name: 'Alice', username: 'alice', email: 'alice@example.org'})
 
       expect(backstage.extra).to have_key(:raw_info)
