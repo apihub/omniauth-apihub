@@ -31,7 +31,7 @@ module OmniAuth
 
       def raw_info
         payload = access_token.get('me').parsed
-        @raw_info ||= payload[:user]
+        @raw_info ||= payload['user']
       end
 
       def build_access_token
