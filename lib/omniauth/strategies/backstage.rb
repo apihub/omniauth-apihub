@@ -1,5 +1,6 @@
 require 'omniauth-oauth2'
 require "omniauth/backstage/client"
+require 'base64'
 
 module OmniAuth
   module Strategies
@@ -31,6 +32,16 @@ module OmniAuth
       def raw_info
         payload = access_token.get('me').parsed
         @raw_info ||= payload[:user]
+      end
+
+      def build_access_token
+        options.token_params.merge!(:headers => {'Authorization' => basic_auth_header })
+        super
+      end
+
+      private
+      def basic_auth_header
+        "Basic " + Base64.strict_encode64("#{options[:client_id]}:#{options[:client_secret]}")
       end
     end
   end
