@@ -1,5 +1,5 @@
 module OmniAuth
-  module Backstage
+  module ApiHub
     class Client
       def self.client_options(options)
         ok = %w{site authorize_url token_url}.all? {|param| options.include?(param.to_sym) }

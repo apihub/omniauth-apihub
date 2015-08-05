@@ -1,11 +1,11 @@
 require 'omniauth-oauth2'
-require "omniauth/backstage/client"
+require "omniauth/apihub/client"
 require 'base64'
 
 module OmniAuth
   module Strategies
-    class Backstage < OmniAuth::Strategies::OAuth2
-      option :name, 'backstage'
+    class ApiHub < OmniAuth::Strategies::OAuth2
+      option :name, 'apihub'
       option :client_options, nil
 
       uid { raw_info['email'].to_s }
@@ -26,7 +26,7 @@ module OmniAuth
 
       def initialize(app, *args, &block)
         super(app, *args, &block)
-        options[:client_options] = OmniAuth::Backstage::Client.client_options(options) if options.client_options.nil?
+        options[:client_options] = OmniAuth::ApiHub::Client.client_options(options) if options.client_options.nil?
       end
 
       def raw_info

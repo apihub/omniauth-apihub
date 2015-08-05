@@ -1,16 +1,16 @@
 # coding: utf-8
-require File.expand_path('../lib/omniauth-backstage/version', __FILE__)
+require File.expand_path('../lib/omniauth-apihub/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.name          = "omniauth-backstage"
-  spec.version       = OmniAuth::Backstage::VERSION
+  spec.name          = "omniauth-apihub"
+  spec.version       = OmniAuth::ApiHub::VERSION
   spec.license       = "MIT"
 
   spec.authors       = ["Alberto Leal"]
   spec.email         = ["albertonb@gmail.com"]
-  spec.description   = %q{Backstage OAuth2 Strategy for OmniAuth.}
-  spec.summary       = %q{Backstage OAuth2 Strategy for OmniAuth.}
-  spec.homepage      = "https://github.com/backstage/omniauth-backstage"
+  spec.description   = %q{ApiHub OAuth2 Strategy for OmniAuth.}
+  spec.summary       = %q{ApiHub OAuth2 Strategy for OmniAuth.}
+  spec.homepage      = "https://github.com/apihub/omniauth-apihub"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

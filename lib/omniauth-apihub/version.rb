@@ -1,5 +1,5 @@
 module OmniAuth
-  module Backstage
+  module ApiHub
     VERSION = "0.0.6"
   end
 end

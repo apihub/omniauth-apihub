@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in omniauth-backstage.gemspec
+# Specify your gem's dependencies in omniauth-apihub.gemspec
 gemspec
